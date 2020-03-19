@@ -1,0 +1,160 @@
+body {
+    background-color: gray;
+    color: black;
+}
+
+header {
+    text-align: center;
+}
+
+header hr {
+    margin-top: -1.3vh;
+}
+
+header h1 {
+    padding-top: 2vh;
+}
+
+#content {
+    width: 60%;
+    margin-left: 18vw;
+}
+
+#take-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-top: -10px;
+    font-size: 2.5vh;
+}
+.container {
+    background-color: white;
+    margin-top: 1px;
+    height: 10vh;
+}
+
+.row-2 {
+    width: 10vw;
+    display: inline-block;
+}
+.cate{
+    height: 10vh;
+    width: 29.78vw;
+    margin-top: -0.5px;
+}
+.date{
+    margin-left: -31.19vw;
+    height: 10vh;
+    width: 30.08vw;
+    margin-top: -0.5px;
+}
+#category{
+    width: 28vw;
+    height: 7vh;
+    margin-top: -6vh; 
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+#due_date {
+    width: 28vw;
+    height: 7vh;
+    margin-top: -6vh;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.button {
+    margin-top: 3.5vh;
+    width: 15vw;
+    height: 8vh;
+    font-size: large;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.button:hover {background-color: rgb(65, 61, 61)}
+
+.button:active {
+    background-color: black;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.button2{
+    width: auto;
+    background-color: rgb(199, 56, 56);
+}
+
+.button2:hover{
+    background-color: rgb(136, 17, 17);
+}
+.button2:active {
+    background-color: red;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.icon {
+    margin-right: 1vw;
+}
+
+.list-container {
+    list-style: none;
+    padding: 0px;
+}
+
+.new-items {
+    height: auto;
+}
+.cal-icon{
+    margin-left: 2vw;
+    padding: 0%;
+    display: flex;
+    display: inline-block;
+}
+.todo-add{
+    height: auto;
+    width: 45vw;
+    margin-top: -2vh;
+    display: flex;
+    display: inline-block;
+}
+.category-add{
+    height: 5vh;
+    width: 7vw;
+    background-color:green;
+    color: white;
+    display: flex;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-right: -50px;
+}
+.hov:hover{
+    background-color: #e2dede;
+}
+.category_col_personal{
+    background-color: rgb(167, 18, 18);
+}
+.category_col_school{
+    background-color:rgb(173, 150, 73);
+}
+.category_col_work{
+    background-color: violet;
+}
+.category_col_cleaning{
+    background-color: rgb(84, 146, 115);
+}
+.category_col_other{
+    background-color: chartreuse;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+    <main id="content">
+        <header>
+            <div class="container" style="margin-top: 30px;">
+                <div class="row">
+                <div class="col">
+                    <h1 >TODO List</h1>
+                </div>
+                </div>
+            </div>
+        </header>
+
+        <!--  Adding data into database -->
+        <form action="/create-list" method="POST" id="new-item-form">
+            <div class="container hov">
+                <div class="row">
+                <div class="col">
+                    <h5 class="description">Description</h5>
+                    <div>
+                        <input type="text" name="description" placeholder="what do you need to do?" id="take-input" required>
+                    </div>
+                </div>
+                </div>
+            </div>
+    
+            <div class="container" style=" padding: 0%;background-color: transparent">
+                <div class="row">
+                <div class="col">
+                    <div>
+                        
+                        <div class="container row-2 cate hov">
+                            <div class="row">
+                            <div class="col">
+                                <h5 class="description">Category</h5>
+                                        <div class="">
+                                            <select name="category" id="category" required>
+                                                <option value="default">Choose a category</option>
+                                                <option value="personal">Personal</option>
+                                                <option value="work">Work</option>
+                                                <option value="school">School</option>
+                                                <option value="cleaning">Cleaning</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+    
+                        <div class="container row-2 date hov">
+                            <div class="row ">
+                            <div class="col">
+                                <div>
+        
+                                    <h5>Due Date</h5>
+                                    <input type="date" id="due_date" name="due_date" required>
+                                
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                </div>
+            </div>
+    
+            <div class="container" style="text-align: center; height: 15vh;margin-top: 0px;">
+                <div class="row">
+                <div class="col">
+                    <div>
+                        
+                        <button type="submit" class="button add" id="add">
+                            <i class="fas fa-plus-square icon"></i>
+                            Add Task
+                        </button>
+                        <button type="submit" class="button button2" id="delete" 
+                        form="delete-form">
+                            <i class="fas fa-trash-alt icon" ></i>
+                            Delete Tasks
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </form>
+
+    <form action="/delete-item" method="POST" id="delete-form" name="delete-form"> 
+        <div>
+            <ul class="list-container">
+                <% for(let i of list_item) {%>
+                    <li>
+                        <div class="container new-items">
+                            <div class="row">
+                            <div class="col"><br>
+                                <div class="todo-add">
+                                    <input type="checkbox" name="<%= i.id %>">
+                                    <label for="" style="font-size: 16px; margin-bottom: -7px;"><b>&nbsp;&nbsp;<%= i.description %></b></label>
+                                    <p><i class="far fa-calendar-alt cal-icon"></i>&nbsp;&nbsp;<%= i.due_date %></p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="category-add category_col_<%= i.category%>">
+                                    <p style="padding-top: 5px;"><%= i.category %></p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                <%} %>
+            </ul>
+        </div>
+    </form>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
